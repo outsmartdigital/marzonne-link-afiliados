@@ -32,7 +32,7 @@ export function ConversionsChart({ data }: ConversionsChartProps) {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <TrendingUp className="w-5 h-5 text-emerald-600" />
+          <TrendingUp className="w-5 h-5 text-[#FCD34D]" />
           Conversoes (Ultimos 30 dias)
         </CardTitle>
       </CardHeader>

@@ -205,20 +205,20 @@ function CadastroContent() {
           <div
             className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${
               affiliateValid
-                ? 'bg-emerald-50 border border-emerald-200'
+                ? 'bg-[#FEF9E7] border border-[#FCD34D]'
                 : 'bg-yellow-50 border border-yellow-200'
             }`}
           >
             {affiliateValid ? (
               <>
-                <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                  <User className="w-4 h-4 text-emerald-600" />
+                <div className="w-8 h-8 bg-[#FEF9E7] rounded-full flex items-center justify-center">
+                  <User className="w-4 h-4 text-[#FCD34D]" />
                 </div>
                 <div>
-                  <p className="text-sm text-emerald-700">
+                  <p className="text-sm text-black">
                     Voce foi indicado por um afiliado!
                   </p>
-                  <p className="text-xs text-emerald-600">
+                  <p className="text-xs text-[#FCD34D]">
                     Codigo: {affiliateCode}
                   </p>
                 </div>
@@ -240,7 +240,7 @@ function CadastroContent() {
           <>
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-gray-900">
-                Cadastre-se no Marzonne
+                Cadastre-se no DNA de Craque
               </h1>
               <p className="mt-2 text-gray-600">
                 Escolha o tipo de conta que deseja criar
@@ -249,12 +249,12 @@ function CadastroContent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <Card
-                className="cursor-pointer hover:border-emerald-300 hover:shadow-md transition-all"
+                className="cursor-pointer hover:border-[#FCD34D] hover:shadow-md transition-all"
                 onClick={() => setUserType('athlete')}
               >
                 <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <User className="w-8 h-8 text-emerald-600" />
+                  <div className="w-16 h-16 bg-[#FEF9E7] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <User className="w-8 h-8 text-[#FCD34D]" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900">
                     Sou Atleta
@@ -267,7 +267,7 @@ function CadastroContent() {
               </Card>
 
               <Card
-                className="cursor-pointer hover:border-emerald-300 hover:shadow-md transition-all"
+                className="cursor-pointer hover:border-[#FCD34D] hover:shadow-md transition-all"
                 onClick={() => setUserType('scout')}
               >
                 <CardContent className="p-6 text-center">
@@ -329,14 +329,14 @@ function CadastroContent() {
                   Ao se cadastrar, voce concorda com nossos{' '}
                   <Link
                     href="/termos"
-                    className="text-emerald-600 hover:underline"
+                    className="text-[#FCD34D] hover:underline"
                   >
                     Termos de Uso
                   </Link>{' '}
                   e{' '}
                   <Link
                     href="/privacidade"
-                    className="text-emerald-600 hover:underline"
+                    className="text-[#FCD34D] hover:underline"
                   >
                     Politica de Privacidade
                   </Link>

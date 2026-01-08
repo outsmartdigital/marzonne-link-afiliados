@@ -80,19 +80,19 @@ export default function MeuLinkPage() {
         <h2 className="font-semibold text-gray-900 mb-4">Como funciona?</h2>
         <ol className="space-y-3 text-gray-600">
           <li className="flex items-start gap-3">
-            <span className="flex-shrink-0 w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-sm font-semibold">
+            <span className="flex-shrink-0 w-6 h-6 bg-[#FEF9E7] text-[#FCD34D] rounded-full flex items-center justify-center text-sm font-semibold">
               1
             </span>
             <span>Compartilhe seu link exclusivo nas redes sociais ou com amigos</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="flex-shrink-0 w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-sm font-semibold">
+            <span className="flex-shrink-0 w-6 h-6 bg-[#FEF9E7] text-[#FCD34D] rounded-full flex items-center justify-center text-sm font-semibold">
               2
             </span>
             <span>Quando alguem se cadastrar atraves do seu link, voce ganha creditos</span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="flex-shrink-0 w-6 h-6 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-sm font-semibold">
+            <span className="flex-shrink-0 w-6 h-6 bg-[#FEF9E7] text-[#FCD34D] rounded-full flex items-center justify-center text-sm font-semibold">
               3
             </span>
             <span>Acumule creditos e resgate quando quiser em Configuracoes</span>

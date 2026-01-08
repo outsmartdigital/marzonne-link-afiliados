@@ -13,8 +13,8 @@ export default function RegistroSucessoPage() {
       <main className="max-w-lg mx-auto px-4 py-16">
         <Card>
           <CardContent className="py-12 text-center">
-            <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-8 h-8 text-emerald-600" />
+            <div className="w-16 h-16 bg-[#FEF9E7] rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-8 h-8 text-[#FCD34D]" />
             </div>
 
             <h1 className="text-2xl font-bold text-gray-900 mb-2">

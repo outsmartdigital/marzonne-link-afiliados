@@ -259,18 +259,18 @@ export default function ConfiguracoesPage() {
 
       {/* Success Messages */}
       {savedProfile && (
-        <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center gap-2">
-          <CheckCircle className="w-5 h-5 text-emerald-600" />
-          <p className="text-sm text-emerald-700">
+        <div className="p-4 bg-[#FEF9E7] border border-[#FCD34D] rounded-lg flex items-center gap-2">
+          <CheckCircle className="w-5 h-5 text-[#FCD34D]" />
+          <p className="text-sm text-black">
             Perfil atualizado com sucesso!
           </p>
         </div>
       )}
 
       {savedBank && (
-        <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center gap-2">
-          <CheckCircle className="w-5 h-5 text-emerald-600" />
-          <p className="text-sm text-emerald-700">
+        <div className="p-4 bg-[#FEF9E7] border border-[#FCD34D] rounded-lg flex items-center gap-2">
+          <CheckCircle className="w-5 h-5 text-[#FCD34D]" />
+          <p className="text-sm text-black">
             Dados bancarios salvos com sucesso!
           </p>
         </div>
@@ -285,18 +285,18 @@ export default function ConfiguracoesPage() {
       )}
 
       {/* Credit Balance & Withdraw */}
-      <Card className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white">
+      <Card className="bg-black text-white rounded-2xl">
         <CardContent className="py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Wallet className="w-5 h-5" />
-                <span className="text-emerald-100">Seu Saldo</span>
+                <Wallet className="w-5 h-5 text-[#FCD34D]" />
+                <span className="text-gray-300">Seu Saldo</span>
               </div>
               <p className="text-4xl font-bold">
                 {formatCurrency(affiliate?.credit_balance || 0)}
               </p>
-              <p className="text-emerald-100 text-sm mt-1">
+              <p className="text-gray-400 text-sm mt-1">
                 Disponivel para resgate
               </p>
             </div>
@@ -310,7 +310,7 @@ export default function ConfiguracoesPage() {
                   setShowWithdrawModal(true);
                 }
               }}
-              className="bg-white text-emerald-600 hover:bg-emerald-50"
+              className="bg-[#FCD34D] text-black hover:bg-[#EAB308]"
               size="lg"
               leftIcon={<Banknote className="w-5 h-5" />}
               disabled={(affiliate?.credit_balance || 0) <= 0}
@@ -482,8 +482,8 @@ export default function ConfiguracoesPage() {
       >
         {withdrawSuccess ? (
           <div className="text-center py-8">
-            <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle className="w-8 h-8 text-emerald-600" />
+            <div className="w-16 h-16 bg-[#FEF9E7] rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="w-8 h-8 text-[#FCD34D]" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900">
               Solicitacao enviada!

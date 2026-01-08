@@ -153,10 +153,10 @@ function DashboardContent() {
     <div className="space-y-6">
       {/* Welcome message */}
       {isWelcome && (
-        <Card className="bg-emerald-50 border-emerald-200">
+        <Card className="bg-[#FEF9E7] border-[#FCD34D]">
           <CardContent className="py-4">
-            <p className="text-emerald-800">
-              <strong>Bem-vindo ao Marzonne Afiliados!</strong> Sua conta foi
+            <p className="text-black">
+              <strong>Bem-vindo ao DNA de Craque Afiliados!</strong> Sua conta foi
               criada com sucesso. Compartilhe seu link e comece a ganhar creditos!
             </p>
           </CardContent>
@@ -172,26 +172,26 @@ function DashboardContent() {
       </div>
 
       {/* Credit Balance Card */}
-      <Card className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white">
+      <Card className="bg-black text-white rounded-2xl">
         <CardContent className="py-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Wallet className="w-5 h-5" />
-                <span className="text-emerald-100">Saldo Disponivel</span>
+                <Wallet className="w-5 h-5 text-[#FCD34D]" />
+                <span className="text-gray-300">Saldo Disponivel</span>
               </div>
               <p className="text-4xl font-bold">
                 {formatCurrency(affiliate?.credit_balance || 0)}
               </p>
               {(stats?.pendingWithdrawals || 0) > 0 && (
-                <p className="text-emerald-100 text-sm mt-1">
+                <p className="text-gray-400 text-sm mt-1">
                   + {formatCurrency(stats?.pendingWithdrawals || 0)} em processamento
                 </p>
               )}
             </div>
             <Link href="/configuracoes">
               <Button
-                className="bg-white text-emerald-600 hover:bg-emerald-50"
+                className="bg-[#FCD34D] text-black hover:bg-[#EAB308]"
                 size="lg"
                 rightIcon={<ArrowRight className="w-5 h-5" />}
               >

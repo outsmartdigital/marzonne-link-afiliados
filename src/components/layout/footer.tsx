@@ -10,8 +10,8 @@ export function Footer() {
           {/* Logo and Description */}
           <div>
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold text-emerald-600">
-                Marzonne
+              <span className="text-xl font-bold text-[#FCD34D]">
+                DNA de Craque
               </span>
               <span className="ml-2 text-sm text-gray-500">Afiliados</span>
             </Link>
@@ -74,7 +74,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-sm text-gray-400 text-center">
-            &copy; {currentYear} Marzonne. Todos os direitos reservados.
+            &copy; {currentYear} DNA de Craque. Todos os direitos reservados.
           </p>
         </div>
       </div>
