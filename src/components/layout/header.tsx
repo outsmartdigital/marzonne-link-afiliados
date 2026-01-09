@@ -39,8 +39,8 @@ export function Header({ user, showAuthButtons = true }: HeaderProps) {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-emerald-600">Marzonne</span>
-            <span className="ml-2 text-sm text-gray-500">Afiliados</span>
+            <span className="text-2xl font-bold text-black">DNA de Craque</span>
+            <span className="ml-2 text-sm text-[#FCD34D] font-semibold">Afiliados</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -51,8 +51,8 @@ export function Header({ user, showAuthButtons = true }: HeaderProps) {
                   onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center space-x-2 text-gray-700 hover:text-gray-900"
                 >
-                  <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                    <User className="w-4 h-4 text-emerald-600" />
+                  <div className="w-8 h-8 bg-[#FCD34D] rounded-full flex items-center justify-center">
+                    <User className="w-4 h-4 text-black" />
                   </div>
                   <span className="text-sm font-medium">
                     {user.name || user.email}
@@ -121,8 +121,8 @@ export function Header({ user, showAuthButtons = true }: HeaderProps) {
             {user ? (
               <>
                 <div className="flex items-center space-x-2 pb-3 border-b border-gray-100">
-                  <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                    <User className="w-4 h-4 text-emerald-600" />
+                  <div className="w-8 h-8 bg-[#FCD34D] rounded-full flex items-center justify-center">
+                    <User className="w-4 h-4 text-black" />
                   </div>
                   <span className="text-sm font-medium text-gray-900">
                     {user.name || user.email}

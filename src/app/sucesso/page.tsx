@@ -24,8 +24,8 @@ function SucessoContent() {
         <Card>
           <CardContent className="p-8 text-center">
             {/* Success Icon */}
-            <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-10 h-10 text-emerald-600" />
+            <div className="w-20 h-20 bg-[#FEF9E7] rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-10 h-10 text-[#FCD34D]" />
             </div>
 
             {/* Success Message */}
@@ -34,8 +34,8 @@ function SucessoContent() {
             </h1>
             <p className="text-lg text-gray-600 mb-8">
               {userType === 'athlete'
-                ? 'Bem-vindo ao Marzonne! Agora voce pode mostrar seu talento para scouts e clubes de todo o Brasil.'
-                : 'Bem-vindo ao Marzonne! Agora voce pode descobrir novos talentos e encontrar os melhores atletas.'}
+                ? 'Bem-vindo ao DNA de Craque! Agora voce pode mostrar seu talento para scouts e clubes de todo o Brasil.'
+                : 'Bem-vindo ao DNA de Craque! Agora voce pode descobrir novos talentos e encontrar os melhores atletas.'}
             </p>
 
             {/* Next Steps */}
@@ -46,19 +46,19 @@ function SucessoContent() {
               </h2>
               <ol className="text-left space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
-                  <span className="w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-medium">
+                  <span className="w-6 h-6 bg-[#FCD34D] text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-medium">
                     1
                   </span>
-                  <span>Baixe o aplicativo Marzonne no seu celular</span>
+                  <span>Baixe o aplicativo DNA de Craque no seu celular</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-medium">
+                  <span className="w-6 h-6 bg-[#FCD34D] text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-medium">
                     2
                   </span>
                   <span>Faca login com o email e senha que voce cadastrou</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="w-6 h-6 bg-emerald-600 text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-medium">
+                  <span className="w-6 h-6 bg-[#FCD34D] text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-medium">
                     3
                   </span>
                   <span>
@@ -113,7 +113,7 @@ function SucessoContent() {
 
         {/* Back to home */}
         <div className="text-center mt-6">
-          <Link href="/" className="text-emerald-600 hover:text-emerald-700 text-sm">
+          <Link href="/" className="text-[#FCD34D] hover:text-black text-sm">
             Voltar para a pagina inicial
           </Link>
         </div>

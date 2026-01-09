@@ -24,7 +24,7 @@ export default function RegistroPage() {
             Ja tem uma conta?{' '}
             <Link
               href="/login"
-              className="text-emerald-600 hover:text-emerald-700 font-medium"
+              className="text-[#FCD34D] hover:text-black font-medium"
             >
               Entrar
             </Link>

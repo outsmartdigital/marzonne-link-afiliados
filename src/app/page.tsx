@@ -40,21 +40,21 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-emerald-600 to-emerald-800 text-white">
+      <section className="bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Ganhe dinheiro indicando talentos do esporte
             </h1>
-            <p className="mt-6 text-lg md:text-xl text-emerald-100">
-              Torne-se um afiliado Marzonne e receba comissoes por cada atleta ou
+            <p className="mt-6 text-lg md:text-xl text-gray-400">
+              Torne-se um afiliado DNA de Craque e receba comissoes por cada atleta ou
               scout que se cadastrar atraves do seu link.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link href="/registro">
                 <Button
                   size="lg"
-                  className="w-full sm:w-auto bg-white text-emerald-700 hover:bg-emerald-50"
+                  className="w-full sm:w-auto"
                   rightIcon={<ArrowRight className="w-5 h-5" />}
                 >
                   Quero ser Afiliado
@@ -64,7 +64,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-white text-white hover:bg-white/10"
+                  className="w-full sm:w-auto border-[#FCD34D] text-[#FCD34D] hover:bg-[#FCD34D]/10"
                 >
                   Ja tenho conta
                 </Button>
@@ -92,8 +92,8 @@ export default function HomePage() {
                 key={index}
                 className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
               >
-                <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
-                  <feature.icon className="w-6 h-6 text-emerald-600" />
+                <div className="w-12 h-12 bg-[#FEF9E7] rounded-xl flex items-center justify-center mb-6">
+                  <feature.icon className="w-6 h-6 text-[#FCD34D]" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {feature.title}
@@ -111,7 +111,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                Por que ser um afiliado Marzonne?
+                Por que ser um afiliado DNA de Craque?
               </h2>
               <p className="mt-4 text-lg text-gray-600">
                 Faca parte da maior plataforma de descoberta de talentos do
@@ -120,7 +120,7 @@ export default function HomePage() {
               <ul className="mt-8 space-y-4">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-[#FCD34D] flex-shrink-0" />
                     <span className="text-gray-700">{benefit}</span>
                   </li>
                 ))}
@@ -133,38 +133,38 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl p-8 text-white">
+            <div className="bg-[#FCD34D] rounded-2xl p-8 text-black">
               <h3 className="text-2xl font-bold mb-6">Comece em 3 passos</h3>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="font-bold">1</span>
+                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="font-bold text-white">1</span>
                   </div>
                   <div>
                     <h4 className="font-semibold">Cadastre-se</h4>
-                    <p className="text-emerald-100 text-sm">
+                    <p className="text-gray-700 text-sm">
                       Crie sua conta de afiliado em poucos minutos
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="font-bold">2</span>
+                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="font-bold text-white">2</span>
                   </div>
                   <div>
                     <h4 className="font-semibold">Compartilhe</h4>
-                    <p className="text-emerald-100 text-sm">
+                    <p className="text-gray-700 text-sm">
                       Divulgue seu link unico nas redes sociais
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="font-bold">3</span>
+                  <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0">
+                    <span className="font-bold text-white">3</span>
                   </div>
                   <div>
                     <h4 className="font-semibold">Ganhe</h4>
-                    <p className="text-emerald-100 text-sm">
+                    <p className="text-gray-700 text-sm">
                       Receba comissoes por cada cadastro realizado
                     </p>
                   </div>
@@ -182,13 +182,13 @@ export default function HomePage() {
             Pronto para comecar a ganhar?
           </h2>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
-            Junte-se a centenas de afiliados que ja estao ganhando com o Marzonne.
+            Junte-se a centenas de afiliados que ja estao ganhando com o DNA de Craque.
           </p>
           <div className="mt-8">
             <Link href="/registro">
               <Button
                 size="lg"
-                className="bg-emerald-600 hover:bg-emerald-700"
+                className="bg-[#FCD34D] hover:bg-black"
                 rightIcon={<ArrowRight className="w-5 h-5" />}
               >
                 Criar conta gratuita

@@ -75,8 +75,8 @@ export default function EsqueciSenhaPage() {
             <CardContent className="pt-6">
               {success ? (
                 <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-8 h-8 text-emerald-600" />
+                  <div className="w-16 h-16 bg-[#FEF9E7] rounded-full flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="w-8 h-8 text-[#FCD34D]" />
                   </div>
                   <h2 className="text-xl font-semibold text-gray-900 mb-2">
                     Email enviado!

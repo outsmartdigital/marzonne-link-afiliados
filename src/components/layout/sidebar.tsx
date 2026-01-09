@@ -36,7 +36,7 @@ export function Sidebar() {
                 className={cn(
                   'group flex items-center px-3 py-2 text-sm font-medium rounded-lg transition-colors',
                   isActive
-                    ? 'bg-emerald-50 text-emerald-700'
+                    ? 'bg-[#FEF9E7] text-black'
                     : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                 )}
               >
@@ -44,7 +44,7 @@ export function Sidebar() {
                   className={cn(
                     'mr-3 h-5 w-5 flex-shrink-0',
                     isActive
-                      ? 'text-emerald-600'
+                      ? 'text-[#FCD34D]'
                       : 'text-gray-400 group-hover:text-gray-500'
                   )}
                 />
@@ -56,14 +56,14 @@ export function Sidebar() {
 
         {/* Stats Summary */}
         <div className="px-3 mt-auto">
-          <div className="bg-emerald-50 rounded-lg p-4">
+          <div className="bg-black rounded-2xl p-4">
             <div className="flex items-center">
-              <TrendingUp className="h-5 w-5 text-emerald-600" />
-              <span className="ml-2 text-sm font-medium text-emerald-700">
+              <TrendingUp className="h-5 w-5 text-[#FCD34D]" />
+              <span className="ml-2 text-sm font-medium text-[#FCD34D]">
                 Dica
               </span>
             </div>
-            <p className="mt-2 text-xs text-emerald-600">
+            <p className="mt-2 text-xs text-gray-300">
               Compartilhe seu link de afiliado nas redes sociais para aumentar
               suas conversoes!
             </p>
@@ -90,7 +90,7 @@ export function MobileNav() {
               href={item.href}
               className={cn(
                 'flex flex-col items-center px-3 py-2',
-                isActive ? 'text-emerald-600' : 'text-gray-500'
+                isActive ? 'text-[#FCD34D]' : 'text-gray-500'
               )}
             >
               <Icon className="h-5 w-5" />

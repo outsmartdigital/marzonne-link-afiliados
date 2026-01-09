@@ -23,8 +23,8 @@ export function AffiliateLink({ affiliateCode }: AffiliateLinkProps) {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Cadastre-se no Marzonne',
-          text: 'Use meu link para se cadastrar no Marzonne e descobrir talentos do esporte!',
+          title: 'Cadastre-se no DNA de Craque',
+          text: 'Use meu link para se cadastrar no DNA de Craque e descobrir talentos do esporte!',
           url: link,
         });
       } catch {
@@ -39,7 +39,7 @@ export function AffiliateLink({ affiliateCode }: AffiliateLinkProps) {
     <Card id="link">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Share2 className="w-5 h-5 text-emerald-600" />
+          <Share2 className="w-5 h-5 text-[#FCD34D]" />
           Seu Link de Afiliado
         </CardTitle>
       </CardHeader>
@@ -76,11 +76,11 @@ export function AffiliateLink({ affiliateCode }: AffiliateLinkProps) {
           </div>
         </div>
 
-        <div className="mt-4 p-4 bg-emerald-50 rounded-lg">
-          <p className="text-sm text-emerald-700">
+        <div className="mt-4 p-4 bg-[#FEF9E7] rounded-lg">
+          <p className="text-sm text-black">
             <strong>Seu codigo:</strong> {affiliateCode}
           </p>
-          <p className="text-xs text-emerald-600 mt-1">
+          <p className="text-xs text-gray-600 mt-1">
             Este codigo e unico e sera usado para rastrear seus cadastros.
           </p>
         </div>

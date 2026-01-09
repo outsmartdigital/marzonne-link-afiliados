@@ -33,7 +33,7 @@ export function StatsCard({
               <p
                 className={cn(
                   'mt-1 text-sm font-medium',
-                  trend.isPositive ? 'text-emerald-600' : 'text-red-600'
+                  trend.isPositive ? 'text-[#FCD34D]' : 'text-red-600'
                 )}
               >
                 {trend.isPositive ? '+' : ''}
@@ -44,8 +44,8 @@ export function StatsCard({
               <p className="mt-1 text-sm text-gray-500">{description}</p>
             )}
           </div>
-          <div className="p-3 bg-emerald-50 rounded-lg">
-            <Icon className="w-6 h-6 text-emerald-600" />
+          <div className="p-3 bg-[#FEF9E7] rounded-lg">
+            <Icon className="w-6 h-6 text-[#FCD34D]" />
           </div>
         </div>
       </CardContent>

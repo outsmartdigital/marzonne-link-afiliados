@@ -13,7 +13,7 @@ export function Badge({
 }: BadgeProps) {
   const variants = {
     default: 'bg-gray-100 text-gray-700',
-    success: 'bg-emerald-100 text-emerald-700',
+    success: 'bg-[#FEF9E7] text-black border border-[#FCD34D]',
     warning: 'bg-yellow-100 text-yellow-700',
     danger: 'bg-red-100 text-red-700',
     info: 'bg-blue-100 text-blue-700',

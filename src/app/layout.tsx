@@ -8,10 +8,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Marzonne Afiliados - Plataforma de Afiliados',
+  title: 'DNA de Craque Afiliados - Plataforma de Afiliados',
   description:
-    'Ganhe comissoes indicando atletas e scouts para a plataforma Marzonne. Cadastre-se como afiliado e comece a ganhar hoje!',
-  keywords: ['afiliados', 'futebol', 'atletas', 'scouts', 'marzonne'],
+    'Ganhe comissoes indicando atletas e scouts para a plataforma DNA de Craque. Cadastre-se como afiliado e comece a ganhar hoje!',
+  keywords: ['afiliados', 'futebol', 'atletas', 'scouts', 'dna de craque'],
 };
 
 export default function RootLayout({

@@ -20,7 +20,7 @@ export function RecentRegistrations({ conversions }: RecentRegistrationsProps) {
     <Card>
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="flex items-center gap-2">
-          <Users className="w-5 h-5 text-emerald-600" />
+          <Users className="w-5 h-5 text-[#FCD34D]" />
           Cadastros Recentes
         </CardTitle>
         <Link href="/cadastros">

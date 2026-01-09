@@ -110,7 +110,7 @@ function LoginContent() {
                 <div className="flex items-center justify-end">
                   <Link
                     href="/esqueci-senha"
-                    className="text-sm text-emerald-600 hover:text-emerald-700"
+                    className="text-sm text-[#FCD34D] hover:text-black"
                   >
                     Esqueci minha senha
                   </Link>
@@ -131,7 +131,7 @@ function LoginContent() {
                   Nao tem uma conta?{' '}
                   <Link
                     href="/registro"
-                    className="text-emerald-600 hover:text-emerald-700 font-medium"
+                    className="text-[#FCD34D] hover:text-black font-medium"
                   >
                     Cadastre-se
                   </Link>

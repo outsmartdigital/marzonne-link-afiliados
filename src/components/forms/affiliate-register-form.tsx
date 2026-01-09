@@ -196,11 +196,11 @@ export function AffiliateRegisterForm() {
 
       <p className="text-xs text-gray-500 text-center">
         Ao se cadastrar, voce concorda com nossos{' '}
-        <a href="/termos" className="text-emerald-600 hover:underline">
+        <a href="/termos" className="text-[#FCD34D] hover:underline">
           Termos de Uso
         </a>{' '}
         e{' '}
-        <a href="/privacidade" className="text-emerald-600 hover:underline">
+        <a href="/privacidade" className="text-[#FCD34D] hover:underline">
           Politica de Privacidade
         </a>
         .
