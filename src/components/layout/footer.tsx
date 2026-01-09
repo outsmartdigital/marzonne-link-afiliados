@@ -48,7 +48,7 @@ export function Footer() {
                   href="/privacidade"
                   className="text-sm text-gray-500 hover:text-gray-900"
                 >
-                  Politica de Privacidade
+                  Política de Privacidade
                 </Link>
               </li>
             </ul>

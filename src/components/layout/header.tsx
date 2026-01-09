@@ -75,7 +75,7 @@ export function Header({ user, showAuthButtons = true }: HeaderProps) {
                       onClick={() => setIsUserMenuOpen(false)}
                     >
                       <Settings className="w-4 h-4 mr-2" />
-                      Configuracoes
+                      Configurações
                     </Link>
                     <hr className="my-1" />
                     <button

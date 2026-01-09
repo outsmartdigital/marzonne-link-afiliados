@@ -128,7 +128,7 @@ function LoginContent() {
 
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">
-                  Nao tem uma conta?{' '}
+                  Não tem uma conta?{' '}
                   <Link
                     href="/registro"
                     className="text-[#FCD34D] hover:text-black font-medium"

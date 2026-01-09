@@ -44,17 +44,17 @@ export default function MeuLinkPage() {
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Meu Link de Afiliado</h1>
         <p className="text-gray-600 mt-1">
-          Compartilhe seu link e ganhe creditos por cada cadastro realizado
+          Compartilhe seu link e ganhe créditos por cada cadastro realizado
         </p>
       </div>
 
       {affiliate?.status === 'pending' ? (
         <div className="p-6 bg-yellow-50 border border-yellow-200 rounded-lg">
           <h2 className="font-semibold text-yellow-800 mb-2">
-            Conta pendente de aprovacao
+            Conta pendente de aprovação
           </h2>
           <p className="text-yellow-700">
-            Seu link de afiliado estara disponivel apos a aprovacao da sua conta
+            Seu link de afiliado estará disponível após a aprovação da sua conta
             pela nossa equipe.
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function MeuLinkPage() {
           <h2 className="font-semibold text-red-800 mb-2">Conta rejeitada</h2>
           <p className="text-red-700">
             Sua conta foi rejeitada. Entre em contato com o suporte para mais
-            informacoes.
+            informações.
           </p>
         </div>
       ) : affiliate ? (
@@ -89,13 +89,13 @@ export default function MeuLinkPage() {
             <span className="flex-shrink-0 w-6 h-6 bg-[#FEF9E7] text-[#FCD34D] rounded-full flex items-center justify-center text-sm font-semibold">
               2
             </span>
-            <span>Quando alguem se cadastrar atraves do seu link, voce ganha creditos</span>
+            <span>Quando alguém se cadastrar através do seu link, você ganha créditos</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="flex-shrink-0 w-6 h-6 bg-[#FEF9E7] text-[#FCD34D] rounded-full flex items-center justify-center text-sm font-semibold">
               3
             </span>
-            <span>Acumule creditos e resgate quando quiser em Configuracoes</span>
+            <span>Acumule créditos e resgate quando quiser em Configurações</span>
           </li>
         </ol>
       </div>

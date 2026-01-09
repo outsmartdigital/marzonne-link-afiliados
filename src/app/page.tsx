@@ -9,29 +9,29 @@ const features = [
     icon: Users,
     title: 'Indique Atletas e Scouts',
     description:
-      'Compartilhe seu link unico e receba comissoes por cada cadastro realizado.',
+      'Compartilhe seu link único e receba comissões por cada cadastro realizado.',
   },
   {
     icon: TrendingUp,
     title: 'Acompanhe seu Desempenho',
     description:
-      'Dashboard completo com metricas, graficos e historico de conversoes.',
+      'Dashboard completo com métricas, gráficos e histórico de conversões.',
   },
   {
     icon: DollarSign,
-    title: 'Receba Comissoes',
+    title: 'Receba Comissões',
     description:
-      'Ganhe dinheiro por cada usuario que se cadastrar usando seu link.',
+      'Ganhe dinheiro por cada usuário que se cadastrar usando seu link.',
   },
 ];
 
 const benefits = [
-  'Link unico de afiliado',
-  'Dashboard com metricas em tempo real',
-  'Historico de cadastros',
+  'Link único de afiliado',
+  'Dashboard com métricas em tempo real',
+  'Histórico de cadastros',
   'Suporte dedicado',
   'Pagamentos pontuais',
-  'Sem limite de indicacoes',
+  'Sem limite de indicações',
 ];
 
 export default function HomePage() {
@@ -47,8 +47,8 @@ export default function HomePage() {
               Ganhe dinheiro indicando talentos do esporte
             </h1>
             <p className="mt-6 text-lg md:text-xl text-gray-400">
-              Torne-se um afiliado DNA de Craque e receba comissoes por cada atleta ou
-              scout que se cadastrar atraves do seu link.
+              Torne-se um afiliado DNA de Craque e receba comissões por cada atleta ou
+              scout que se cadastrar através do seu link.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link href="/registro">
@@ -66,7 +66,7 @@ export default function HomePage() {
                   variant="outline"
                   className="w-full sm:w-auto border-[#FCD34D] text-[#FCD34D] hover:bg-[#FCD34D]/10"
                 >
-                  Ja tenho conta
+                  Já tenho conta
                 </Button>
               </Link>
             </div>
@@ -82,7 +82,7 @@ export default function HomePage() {
               Como funciona
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Simples, rapido e lucrativo
+              Simples, rápido e lucrativo
             </p>
           </div>
 
@@ -114,8 +114,8 @@ export default function HomePage() {
                 Por que ser um afiliado DNA de Craque?
               </h2>
               <p className="mt-4 text-lg text-gray-600">
-                Faca parte da maior plataforma de descoberta de talentos do
-                esporte e seja recompensado por suas indicacoes.
+                Faça parte da maior plataforma de descoberta de talentos do
+                esporte e seja recompensado por suas indicações.
               </p>
               <ul className="mt-8 space-y-4">
                 {benefits.map((benefit, index) => (
@@ -128,7 +128,7 @@ export default function HomePage() {
               <div className="mt-8">
                 <Link href="/registro">
                   <Button size="lg" rightIcon={<ArrowRight className="w-5 h-5" />}>
-                    Comecar agora
+                    Começar agora
                   </Button>
                 </Link>
               </div>
@@ -154,7 +154,7 @@ export default function HomePage() {
                   <div>
                     <h4 className="font-semibold">Compartilhe</h4>
                     <p className="text-gray-700 text-sm">
-                      Divulgue seu link unico nas redes sociais
+                      Divulgue seu link único nas redes sociais
                     </p>
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export default function HomePage() {
                   <div>
                     <h4 className="font-semibold">Ganhe</h4>
                     <p className="text-gray-700 text-sm">
-                      Receba comissoes por cada cadastro realizado
+                      Receba comissões por cada cadastro realizado
                     </p>
                   </div>
                 </div>
@@ -179,10 +179,10 @@ export default function HomePage() {
       <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            Pronto para comecar a ganhar?
+            Pronto para começar a ganhar?
           </h2>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
-            Junte-se a centenas de afiliados que ja estao ganhando com o DNA de Craque.
+            Junte-se a centenas de afiliados que já estão ganhando com o DNA de Craque.
           </p>
           <div className="mt-8">
             <Link href="/registro">
