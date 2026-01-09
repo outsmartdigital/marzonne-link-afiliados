@@ -119,7 +119,7 @@ export default function CadastrosPage() {
   const exportCSV = () => {
     if (conversions.length === 0) return;
 
-    const headers = ['Data', 'Nome', 'Email', 'Tipo', 'Comissao', 'Status'];
+    const headers = ['Data', 'Nome', 'Email', 'Tipo', 'Comissão', 'Status'];
     const rows = conversions.map((conv) => [
       new Date(conv.conversion_date).toLocaleDateString('pt-BR'),
       conv.user_name || '-',
@@ -144,7 +144,7 @@ export default function CadastrosPage() {
     link.setAttribute('href', url);
     link.setAttribute(
       'download',
-      `conversoes_${new Date().toISOString().split('T')[0]}.csv`
+      `conversões_${new Date().toISOString().split('T')[0]}.csv`
     );
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
@@ -165,7 +165,7 @@ export default function CadastrosPage() {
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Cadastros</h1>
           <p className="text-gray-600 mt-1">
-            Visualize todos os cadastros realizados atraves do seu link
+            Visualize todos os cadastros realizados através do seu link
           </p>
         </div>
         <Button
@@ -232,10 +232,10 @@ export default function CadastrosPage() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Usuario</TableHead>
+                <TableHead>Usuário</TableHead>
                 <TableHead>Tipo</TableHead>
                 <TableHead>Data</TableHead>
-                <TableHead>Comissao</TableHead>
+                <TableHead>Comissão</TableHead>
                 <TableHead>Status</TableHead>
               </TableRow>
             </TableHeader>
@@ -258,7 +258,7 @@ export default function CadastrosPage() {
                         </div>
                         <div>
                           <p className="font-medium text-gray-900">
-                            {conversion.user_name || 'Usuario'}
+                            {conversion.user_name || 'Usuário'}
                           </p>
                           <p className="text-sm text-gray-500">
                             {conversion.user_email || '-'}
@@ -326,7 +326,7 @@ export default function CadastrosPage() {
                   onClick={() => setPage(page + 1)}
                   disabled={page === totalPages}
                 >
-                  Proximo
+                  Próximo
                 </Button>
               </div>
             </div>

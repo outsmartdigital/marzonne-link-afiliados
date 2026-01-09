@@ -48,11 +48,11 @@ export function AffiliateRegisterForm() {
         if (authError.message.includes('already registered') ||
             authError.message.includes('already exists') ||
             authError.status === 422) {
-          throw new Error('Este email ja possui uma conta cadastrada. Faca login ou use outro email.');
+          throw new Error('Este email já possui uma conta cadastrada. Faça login ou use outro email.');
         }
         throw authError;
       }
-      if (!authData.user) throw new Error('Erro ao criar usuario');
+      if (!authData.user) throw new Error('Erro ao criar usuário');
 
       // 2. Generate unique affiliate code
       let affiliateCode = generateAffiliateCode();
@@ -70,7 +70,7 @@ export function AffiliateRegisterForm() {
         attempts++;
       }
 
-      // 3. Create affiliate record (status pendente para aprovacao do admin)
+      // 3. Create affiliate record (status pendente para aprovação do admin)
       const { error: affiliateError } = await supabase.from('affiliates').insert({
         user_id: authData.user.id,
         name: data.name,
@@ -83,7 +83,7 @@ export function AffiliateRegisterForm() {
 
       if (affiliateError) throw affiliateError;
 
-      // 4. Fazer logout para que usuario precise fazer login
+      // 4. Fazer logout para que usuário precise fazer login
       await supabase.auth.signOut();
 
       // 5. Redirect to success page (not dashboard)
@@ -109,7 +109,7 @@ export function AffiliateRegisterForm() {
       <Card>
         <CardContent className="pt-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
-            Informacoes Pessoais
+            Informações Pessoais
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Input
@@ -149,7 +149,7 @@ export function AffiliateRegisterForm() {
             <Input
               label="Senha"
               type={showPassword ? 'text' : 'password'}
-              placeholder="Minimo 6 caracteres"
+              placeholder="Mínimo 6 caracteres"
               error={errors.password?.message}
               rightIcon={
                 <button
@@ -195,13 +195,13 @@ export function AffiliateRegisterForm() {
       </Button>
 
       <p className="text-xs text-gray-500 text-center">
-        Ao se cadastrar, voce concorda com nossos{' '}
+        Ao se cadastrar, você concorda com nossos{' '}
         <a href="/termos" className="text-[#FCD34D] hover:underline">
           Termos de Uso
         </a>{' '}
         e{' '}
         <a href="/privacidade" className="text-[#FCD34D] hover:underline">
-          Politica de Privacidade
+          Política de Privacidade
         </a>
         .
       </p>

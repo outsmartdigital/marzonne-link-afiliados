@@ -157,7 +157,7 @@ function DashboardContent() {
           <CardContent className="py-4">
             <p className="text-black">
               <strong>Bem-vindo ao DNA de Craque Afiliados!</strong> Sua conta foi
-              criada com sucesso. Compartilhe seu link e comece a ganhar creditos!
+              criada com sucesso. Compartilhe seu link e comece a ganhar créditos!
             </p>
           </CardContent>
         </Card>
@@ -167,7 +167,7 @@ function DashboardContent() {
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
         <p className="text-gray-600 mt-1">
-          Acompanhe suas conversoes e creditos
+          Acompanhe suas conversões e créditos
         </p>
       </div>
 
@@ -178,7 +178,7 @@ function DashboardContent() {
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <Wallet className="w-5 h-5 text-[#FCD34D]" />
-                <span className="text-gray-300">Saldo Disponivel</span>
+                <span className="text-gray-300">Saldo Disponível</span>
               </div>
               <p className="text-4xl font-bold">
                 {formatCurrency(affiliate?.credit_balance || 0)}
@@ -195,7 +195,7 @@ function DashboardContent() {
                 size="lg"
                 rightIcon={<ArrowRight className="w-5 h-5" />}
               >
-                Resgatar Creditos
+                Resgatar Créditos
               </Button>
             </Link>
           </div>
@@ -208,15 +208,15 @@ function DashboardContent() {
           title="Total de Cadastros"
           value={stats?.totalConversions || 0}
           icon={Users}
-          description="Desde o inicio"
+          description="Desde o início"
         />
         <StatsCard
-          title="Ultimos 7 dias"
+          title="Últimos 7 dias"
           value={stats?.conversionsLast7Days || 0}
           icon={Calendar}
         />
         <StatsCard
-          title="Ultimos 30 dias"
+          title="Últimos 30 dias"
           value={stats?.conversionsLast30Days || 0}
           icon={Calendar}
         />

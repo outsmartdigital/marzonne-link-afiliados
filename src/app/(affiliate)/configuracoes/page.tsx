@@ -34,9 +34,9 @@ import { bankDetailsSchema, BankDetailsData } from '@/lib/validations';
 const banks = [
   { value: '001', label: 'Banco do Brasil' },
   { value: '033', label: 'Santander' },
-  { value: '104', label: 'Caixa Economica' },
+  { value: '104', label: 'Caixa Econômica' },
   { value: '237', label: 'Bradesco' },
-  { value: '341', label: 'Itau' },
+  { value: '341', label: 'Itaú' },
   { value: '260', label: 'Nubank' },
   { value: '077', label: 'Inter' },
   { value: '336', label: 'C6 Bank' },
@@ -46,7 +46,7 @@ const banks = [
 
 const accountTypes = [
   { value: 'corrente', label: 'Conta Corrente' },
-  { value: 'poupanca', label: 'Poupanca' },
+  { value: 'poupanca', label: 'Poupança' },
 ];
 
 const pixTypes = [
@@ -54,7 +54,7 @@ const pixTypes = [
   { value: 'cnpj', label: 'CNPJ' },
   { value: 'email', label: 'Email' },
   { value: 'phone', label: 'Telefone' },
-  { value: 'random', label: 'Chave Aleatoria' },
+  { value: 'random', label: 'Chave Aleatória' },
 ];
 
 interface ProfileFormData {
@@ -180,7 +180,7 @@ export default function ConfiguracoesPage() {
 
     const amount = parseFloat(withdrawAmount);
     if (isNaN(amount) || amount <= 0) {
-      setError('Valor invalido');
+      setError('Valor inválido');
       return;
     }
 
@@ -191,7 +191,7 @@ export default function ConfiguracoesPage() {
 
     // Check if bank details exist
     if (!affiliate.bank_details) {
-      setError('Voce precisa cadastrar seus dados bancarios antes de solicitar um resgate.');
+      setError('Você precisa cadastrar seus dados bancários antes de solicitar um resgate.');
       setShowWithdrawModal(false);
       return;
     }
@@ -251,9 +251,9 @@ export default function ConfiguracoesPage() {
     <div className="space-y-6">
       {/* Page Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Configuracoes</h1>
+        <h1 className="text-2xl font-bold text-gray-900">Configurações</h1>
         <p className="text-gray-600 mt-1">
-          Gerencie seus dados pessoais, bancarios e resgate seus creditos
+          Gerencie seus dados pessoais, bancários e resgate seus créditos
         </p>
       </div>
 
@@ -271,7 +271,7 @@ export default function ConfiguracoesPage() {
         <div className="p-4 bg-[#FEF9E7] border border-[#FCD34D] rounded-lg flex items-center gap-2">
           <CheckCircle className="w-5 h-5 text-[#FCD34D]" />
           <p className="text-sm text-black">
-            Dados bancarios salvos com sucesso!
+            Dados bancários salvos com sucesso!
           </p>
         </div>
       )}
@@ -297,13 +297,13 @@ export default function ConfiguracoesPage() {
                 {formatCurrency(affiliate?.credit_balance || 0)}
               </p>
               <p className="text-gray-400 text-sm mt-1">
-                Disponivel para resgate
+                Disponível para resgate
               </p>
             </div>
             <Button
               onClick={() => {
                 if (!hasBankDetails) {
-                  setError('Voce precisa cadastrar seus dados bancarios antes de solicitar um resgate.');
+                  setError('Você precisa cadastrar seus dados bancários antes de solicitar um resgate.');
                   // Scroll to bank section
                   document.getElementById('bank-section')?.scrollIntoView({ behavior: 'smooth' });
                 } else {
@@ -329,7 +329,7 @@ export default function ConfiguracoesPage() {
         <CardContent>
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-500">Codigo de afiliado</p>
+              <p className="text-sm text-gray-500">Código de afiliado</p>
               <p className="font-mono font-semibold text-lg">
                 {affiliate?.affiliate_code}
               </p>
@@ -357,7 +357,7 @@ export default function ConfiguracoesPage() {
       <form onSubmit={profileForm.handleSubmit(onSaveProfile)}>
         <Card>
           <CardHeader>
-            <CardTitle>Informacoes Pessoais</CardTitle>
+            <CardTitle>Informações Pessoais</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -365,14 +365,14 @@ export default function ConfiguracoesPage() {
                 label="Nome Completo"
                 placeholder="Seu nome"
                 leftIcon={<User className="w-4 h-4" />}
-                {...profileForm.register('name', { required: 'Nome e obrigatorio' })}
+                {...profileForm.register('name', { required: 'Nome é obrigatório' })}
               />
               <Input
                 label="Email"
                 type="email"
                 value={affiliate?.email || ''}
                 disabled
-                helperText="O email nao pode ser alterado"
+                helperText="O email não pode ser alterado"
               />
               <Input
                 label="Telefone"
@@ -399,7 +399,7 @@ export default function ConfiguracoesPage() {
         <Card>
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle>Dados Bancarios</CardTitle>
+              <CardTitle>Dados Bancários</CardTitle>
               {hasBankDetails ? (
                 <Badge variant="success">Cadastrado</Badge>
               ) : (
@@ -413,10 +413,10 @@ export default function ConfiguracoesPage() {
                 <AlertCircle className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-sm text-yellow-800 font-medium">
-                    Dados bancarios nao cadastrados
+                    Dados bancários não cadastrados
                   </p>
                   <p className="text-sm text-yellow-700 mt-1">
-                    Para solicitar resgate de creditos, voce precisa cadastrar seus dados bancarios.
+                    Para solicitar resgate de créditos, você precisa cadastrar seus dados bancários.
                   </p>
                 </div>
               </div>
@@ -436,7 +436,7 @@ export default function ConfiguracoesPage() {
                 {...bankForm.register('accountType')}
               />
               <Input
-                label="Agencia"
+                label="Agência"
                 placeholder="0000"
                 leftIcon={<Building className="w-4 h-4" />}
                 error={bankForm.formState.errors.agency?.message}
@@ -466,7 +466,7 @@ export default function ConfiguracoesPage() {
                 isLoading={savingBank}
                 leftIcon={<Save className="w-4 h-4" />}
               >
-                Salvar Dados Bancarios
+                Salvar Dados Bancários
               </Button>
             </div>
           </CardContent>
@@ -486,17 +486,17 @@ export default function ConfiguracoesPage() {
               <CheckCircle className="w-8 h-8 text-[#FCD34D]" />
             </div>
             <h3 className="text-lg font-semibold text-gray-900">
-              Solicitacao enviada!
+              Solicitação enviada!
             </h3>
             <p className="text-gray-500 mt-2">
-              Seu resgate sera processado em ate 3 dias uteis.
+              Seu resgate será processado em até 3 dias úteis.
             </p>
           </div>
         ) : (
           <>
             <div className="mb-4">
               <p className="text-sm text-gray-500 mb-2">
-                Saldo disponivel:{' '}
+                Saldo disponível:{' '}
                 <span className="font-semibold text-gray-900">
                   {formatCurrency(affiliate?.credit_balance || 0)}
                 </span>

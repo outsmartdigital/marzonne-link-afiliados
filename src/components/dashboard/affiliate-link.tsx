@@ -45,7 +45,7 @@ export function AffiliateLink({ affiliateCode }: AffiliateLinkProps) {
       </CardHeader>
       <CardContent>
         <p className="text-sm text-gray-500 mb-4">
-          Compartilhe este link para registrar novos usuarios e ganhar comissoes.
+          Compartilhe este link para registrar novos usuários e ganhar comissões.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3">
@@ -78,10 +78,10 @@ export function AffiliateLink({ affiliateCode }: AffiliateLinkProps) {
 
         <div className="mt-4 p-4 bg-[#FEF9E7] rounded-lg">
           <p className="text-sm text-black">
-            <strong>Seu codigo:</strong> {affiliateCode}
+            <strong>Seu código:</strong> {affiliateCode}
           </p>
           <p className="text-xs text-gray-600 mt-1">
-            Este codigo e unico e sera usado para rastrear seus cadastros.
+            Este código é único e será usado para rastrear seus cadastros.
           </p>
         </div>
       </CardContent>
