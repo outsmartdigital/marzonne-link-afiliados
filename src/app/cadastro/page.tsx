@@ -12,9 +12,30 @@ import { AthleteRegisterData, ScoutRegisterData } from '@/lib/validations';
 
 type UserType = 'athlete' | 'scout' | null;
 
+function translateSupabaseError(message: string): string {
+  const translations: Record<string, string> = {
+    'User already registered': 'Este email já possui uma conta cadastrada.',
+    'Email already registered': 'Este email já possui uma conta cadastrada.',
+    'Invalid login credentials': 'Credenciais de login inválidas.',
+    'Password should be at least 6 characters': 'A senha deve ter pelo menos 6 caracteres.',
+    'Unable to validate email address: invalid format': 'Formato de email inválido.',
+    'Email rate limit exceeded': 'Muitas tentativas. Aguarde alguns minutos e tente novamente.',
+    'For security purposes, you can only request this once every 60 seconds': 'Por segurança, aguarde 60 segundos antes de tentar novamente.',
+  };
+
+  for (const [english, portuguese] of Object.entries(translations)) {
+    if (message.toLowerCase().includes(english.toLowerCase())) {
+      return portuguese;
+    }
+  }
+
+  return 'Erro ao criar conta. Tente novamente.';
+}
+
 function CadastroContent() {
   const [userType, setUserType] = useState<UserType>(null);
   const [affiliateCode, setAffiliateCode] = useState<string | null>(null);
+  const [affiliateName, setAffiliateName] = useState<string | null>(null);
   const [affiliateValid, setAffiliateValid] = useState<boolean | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -39,7 +60,7 @@ function CadastroContent() {
     try {
       const { data, error } = await supabase
         .from('affiliates')
-        .select('id, status')
+        .select('id, status, name')
         .eq('affiliate_code', code)
         .single();
 
@@ -49,6 +70,7 @@ function CadastroContent() {
         setAffiliateValid(false);
       } else {
         setAffiliateValid(true);
+        setAffiliateName(data.name);
       }
     } catch {
       setAffiliateValid(false);
@@ -117,9 +139,8 @@ function CadastroContent() {
       // 4. Redirect to success
       router.push('/sucesso?type=athlete');
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : 'Erro ao criar conta. Tente novamente.'
-      );
+      const message = err instanceof Error ? err.message : '';
+      setError(translateSupabaseError(message));
     } finally {
       setIsLoading(false);
     }
@@ -183,9 +204,8 @@ function CadastroContent() {
       // 4. Redirect to success
       router.push('/sucesso?type=scout');
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : 'Erro ao criar conta. Tente novamente.'
-      );
+      const message = err instanceof Error ? err.message : '';
+      setError(translateSupabaseError(message));
     } finally {
       setIsLoading(false);
     }
@@ -216,10 +236,10 @@ function CadastroContent() {
                 </div>
                 <div>
                   <p className="text-sm text-black">
-                    Voce foi indicado por um afiliado!
+                    Você foi indicado pelo afiliado <strong>{affiliateName}</strong>!
                   </p>
                   <p className="text-xs text-[#FCD34D]">
-                    Codigo: {affiliateCode}
+                    Código: {affiliateCode}
                   </p>
                 </div>
               </>

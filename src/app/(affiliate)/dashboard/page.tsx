@@ -228,7 +228,20 @@ function DashboardContent() {
       </div>
 
       {/* Affiliate Link */}
-      {affiliate && <AffiliateLink affiliateCode={affiliate.affiliate_code} />}
+      {affiliate?.status === 'approved' && (
+        <AffiliateLink affiliateCode={affiliate.affiliate_code} />
+      )}
+
+      {affiliate?.status === 'pending' && (
+        <Card className="bg-yellow-50 border-yellow-200">
+          <CardContent className="py-4">
+            <p className="text-yellow-800">
+              <strong>Conta pendente de aprovação:</strong> Seu link de afiliado estará
+              disponível após a aprovação da sua conta pela nossa equipe.
+            </p>
+          </CardContent>
+        </Card>
+      )}
 
       {/* Charts and Recent */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
