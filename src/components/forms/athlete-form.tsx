@@ -148,6 +148,25 @@ export function AthleteForm({ onSubmit, isLoading, error }: AthleteFormProps) {
         />
       </div>
 
+      <div className="grid grid-cols-2 gap-4">
+        <Input
+          label="Altura do Pai (cm)"
+          type="number"
+          placeholder="Ex: 175"
+          leftIcon={<Ruler className="w-4 h-4" />}
+          error={errors.fatherHeight?.message}
+          {...register('fatherHeight', { valueAsNumber: true })}
+        />
+        <Input
+          label="Altura da Mãe (cm)"
+          type="number"
+          placeholder="Ex: 165"
+          leftIcon={<Ruler className="w-4 h-4" />}
+          error={errors.motherHeight?.message}
+          {...register('motherHeight', { valueAsNumber: true })}
+        />
+      </div>
+
       <Button type="submit" className="w-full" size="lg" isLoading={isLoading}>
         Criar Conta de Atleta
       </Button>

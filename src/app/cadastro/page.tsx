@@ -103,38 +103,25 @@ function CadastroContent() {
       const { error: profileError } = await supabase.from('user_profiles').insert({
         user_id: authData.user.id,
         user_type: 'athlete',
-        user_plan: 'free',
+        user_plan: 'bronze',
         athlete_name: data.name,
         athlete_date_birth: data.dateOfBirth,
         athlete_position: data.position,
         phone: data.phone,
         athlete_height: data.height,
         athlete_weight: data.weight,
+        father_height: data.fatherHeight || null,
+        mother_height: data.motherHeight || null,
         referred_by: affiliateCode,
       });
 
       if (profileError) throw profileError;
 
-      // 3. Create conversion record if affiliate is valid
-      if (affiliateCode && affiliateValid) {
-        const { data: affiliateData } = await supabase
-          .from('affiliates')
-          .select('id')
-          .eq('affiliate_code', affiliateCode)
-          .single();
-
-        if (affiliateData) {
-          await supabase.from('conversions').insert({
-            affiliate_id: affiliateData.id,
-            user_id: authData.user.id,
-            user_type: 'athlete',
-            user_email: data.email,
-            user_name: data.name,
-            commission_amount: 0, // Will be set by admin
-            commission_status: 'pending',
-          });
-        }
-      }
+      // 3. Conversion/commission tracking:
+      // - O código do afiliado (referred_by) já foi salvo no user_profiles
+      // - A conversão/comissão NÃO é criada no cadastro (plano bronze é gratuito)
+      // - A conversão será criada apenas quando o usuário assinar plano Prata ou Ouro
+      // - Essa lógica deve ser implementada no app mobile quando o usuário fizer upgrade de plano
 
       // 4. Redirect to success
       router.push('/sucesso?type=athlete');
@@ -180,26 +167,11 @@ function CadastroContent() {
 
       if (profileError) throw profileError;
 
-      // 3. Create conversion record if affiliate is valid
-      if (affiliateCode && affiliateValid) {
-        const { data: affiliateData } = await supabase
-          .from('affiliates')
-          .select('id')
-          .eq('affiliate_code', affiliateCode)
-          .single();
-
-        if (affiliateData) {
-          await supabase.from('conversions').insert({
-            affiliate_id: affiliateData.id,
-            user_id: authData.user.id,
-            user_type: 'scout',
-            user_email: data.email,
-            user_name: data.name,
-            commission_amount: 0, // Will be set by admin
-            commission_status: 'pending',
-          });
-        }
-      }
+      // 3. Conversion/commission tracking:
+      // - O código do afiliado (referred_by) já foi salvo no user_profiles
+      // - A conversão/comissão NÃO é criada no cadastro (plano gratuito)
+      // - A conversão será criada apenas quando o usuário assinar plano Prata ou Ouro
+      // - Essa lógica deve ser implementada no app mobile quando o usuário fizer upgrade de plano
 
       // 4. Redirect to success
       router.push('/sucesso?type=scout');
