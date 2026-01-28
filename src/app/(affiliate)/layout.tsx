@@ -30,17 +30,24 @@ export default function AffiliateLayout({
         return;
       }
 
-      setUser({
-        email: authUser.email || '',
-        name: authUser.user_metadata?.name,
-      });
-
       // Get affiliate data
       const { data: affiliateData } = await supabase
         .from('affiliates')
         .select('*')
         .eq('user_id', authUser.id)
         .single();
+
+      // Se o usuário não é afiliado (atleta/scout), bloquear acesso
+      if (!affiliateData) {
+        await supabase.auth.signOut();
+        router.push('/login?error=not_affiliate');
+        return;
+      }
+
+      setUser({
+        email: authUser.email || '',
+        name: authUser.user_metadata?.name,
+      });
 
       setAffiliate(affiliateData);
       setLoading(false);

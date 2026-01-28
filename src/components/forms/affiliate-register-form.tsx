@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
-import { Eye, EyeOff, User, Mail, Phone } from 'lucide-react';
+import { Eye, EyeOff, User, Mail, Phone, Ruler } from 'lucide-react';
 import { Button, Input, Card, CardContent } from '@/components/ui';
 import { affiliateRegisterSchema, AffiliateRegisterData } from '@/lib/validations';
 import { createClient } from '@/lib/supabase/client';
@@ -79,6 +79,8 @@ export function AffiliateRegisterForm() {
         affiliate_code: affiliateCode,
         status: 'pending',
         credit_balance: 0,
+        father_height: data.fatherHeight || null,
+        mother_height: data.motherHeight || null,
       });
 
       if (affiliateError) throw affiliateError;
@@ -134,6 +136,22 @@ export function AffiliateRegisterForm() {
               error={errors.phone?.message}
               {...register('phone')}
               className="md:col-span-2"
+            />
+            <Input
+              label="Altura do Pai (cm)"
+              type="number"
+              placeholder="Ex: 175"
+              leftIcon={<Ruler className="w-4 h-4" />}
+              error={errors.fatherHeight?.message}
+              {...register('fatherHeight', { valueAsNumber: true })}
+            />
+            <Input
+              label="Altura da Mãe (cm)"
+              type="number"
+              placeholder="Ex: 165"
+              leftIcon={<Ruler className="w-4 h-4" />}
+              error={errors.motherHeight?.message}
+              {...register('motherHeight', { valueAsNumber: true })}
             />
           </div>
         </CardContent>

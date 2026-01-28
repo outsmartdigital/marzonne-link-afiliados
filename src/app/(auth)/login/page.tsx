@@ -18,6 +18,7 @@ function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirect = searchParams.get('redirect') || '/dashboard';
+  const loginError = searchParams.get('error');
   const supabase = createClient();
 
   const {
@@ -28,17 +29,35 @@ function LoginContent() {
     resolver: zodResolver(loginSchema),
   });
 
+  // Mostrar erro se redirecionado por não ser afiliado
+  const displayError = error || (loginError === 'not_affiliate'
+    ? 'Esta conta não é de afiliado. Use o aplicativo para acessar como atleta ou scout.'
+    : null);
+
   const onSubmit = async (data: LoginData) => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const { error: authError } = await supabase.auth.signInWithPassword({
+      const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
         email: data.email,
         password: data.password,
       });
 
       if (authError) throw authError;
+      if (!authData.user) throw new Error('Erro ao fazer login');
+
+      // Verificar se o usuário é afiliado antes de redirecionar
+      const { data: affiliateData } = await supabase
+        .from('affiliates')
+        .select('id')
+        .eq('user_id', authData.user.id)
+        .single();
+
+      if (!affiliateData) {
+        await supabase.auth.signOut();
+        throw new Error('Esta conta não é de afiliado. Use o aplicativo para acessar como atleta ou scout.');
+      }
 
       router.push(redirect);
       router.refresh();
@@ -71,9 +90,9 @@ function LoginContent() {
           <Card>
             <CardContent className="pt-6">
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                {error && (
+                {displayError && (
                   <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                    <p className="text-sm text-red-600">{error}</p>
+                    <p className="text-sm text-red-600">{displayError}</p>
                   </div>
                 )}
 

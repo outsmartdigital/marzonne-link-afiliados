@@ -118,6 +118,8 @@ export const athleteRegisterSchema = z.object({
   position: z.string().min(1, 'Posição é obrigatória'),
   height: z.number().min(100, 'Altura mínima: 100cm').max(250, 'Altura máxima: 250cm').optional(),
   weight: z.number().min(30, 'Peso mínimo: 30kg').max(200, 'Peso máximo: 200kg').optional(),
+  fatherHeight: z.number().min(100, 'Altura mínima: 100cm').max(250, 'Altura máxima: 250cm').optional(),
+  motherHeight: z.number().min(100, 'Altura mínima: 100cm').max(250, 'Altura máxima: 250cm').optional(),
 }).refine((data) => data.password === data.confirmPassword, {
   message: 'Senhas não conferem',
   path: ['confirmPassword'],
