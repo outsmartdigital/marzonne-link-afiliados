@@ -63,6 +63,8 @@ export const affiliateRegisterSchema = z.object({
     .string()
     .min(10, 'Telefone inválido')
     .regex(/^\d+$/, 'Telefone deve conter apenas números'),
+  fatherHeight: z.number().min(100, 'Altura mínima: 100cm').max(250, 'Altura máxima: 250cm').optional(),
+  motherHeight: z.number().min(100, 'Altura mínima: 100cm').max(250, 'Altura máxima: 250cm').optional(),
 }).refine((data) => data.password === data.confirmPassword, {
   message: 'Senhas não conferem',
   path: ['confirmPassword'],
